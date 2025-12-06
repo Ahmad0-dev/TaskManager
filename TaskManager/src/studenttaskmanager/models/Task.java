@@ -8,7 +8,7 @@ public class Task {
     private String description;
     private LocalDate dueDate;
 
-    // Implement constructor
+    // Implemented constructor
     public Task(int id, String title, String description, LocalDate dueDate) {
         this.id = id;
         this.title = title;
