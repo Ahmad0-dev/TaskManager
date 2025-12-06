@@ -17,5 +17,32 @@ public class ReportGenerator implements IReportGenerator {
         this.taskManager = taskManager;
     }
 
-    // TODO: Implement generateStudentReport that prints tasks and grades per student
+    @Override
+    public void generateStudentReport(int studentId) {
+        List<Submission> submissions = submissionManager.getSubmissionsByStudent(studentId);
+        
+        System.out.println("=".repeat(60));
+        System.out.println("Student Report - Student ID: " + studentId);
+        System.out.println("=".repeat(60));
+        
+        if (submissions.isEmpty()) {
+            System.out.println("No submissions found for this student.");
+            return;
+        }
+        
+        System.out.printf("%-15s %-30s %-15s%n", "Task ID", "Task Title", "Grade");
+        System.out.println("-".repeat(60));
+        
+        for (Submission submission : submissions) {
+            Task task = taskManager.getTaskById(submission.getTaskId());
+            if (task != null) {
+                System.out.printf("%-15d %-30s %-15.2f%n", 
+                    task.getId(), 
+                    task.getTitle(), 
+                    submission.getGrade());
+            }
+        }
+        
+        System.out.println("=".repeat(60));
+    }
 }
