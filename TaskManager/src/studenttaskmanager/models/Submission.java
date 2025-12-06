@@ -7,9 +7,16 @@ public class Submission {
     private int taskId;
     private LocalDate submissionDate;
     private double grade;
-
+    //constructor created
     public Submission(int studentId, int taskId, LocalDate submissionDate) {
-        // TODO: Implement constructor
+
+        public Submission(int studentId, int taskId, LocalDate submissionDate) {
+    this.studentId = studentId;
+    this.taskId = taskId;
+    this.submissionDate = submissionDate;
+    this.grade = 0.0; // default initial grade
+}
+
     }
 
     public boolean isLate(LocalDate dueDate) {
