@@ -8,10 +8,49 @@ public class Task {
     private String description;
     private LocalDate dueDate;
 
-    public Task(int id, String title, String description, LocalDate dueDate) {
-        // TODO: Implement constructor
+    // TODO: Implement constructor
+
+    // Getters
+    public int getId() {
+        return id;
     }
 
-    // TODO: Add getters, setters, and toString method
+    public String getTitle() {
+        return title;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", dueDate=" + dueDate +
+                '}';
+    }
 }
