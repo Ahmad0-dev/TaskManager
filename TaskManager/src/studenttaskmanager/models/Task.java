@@ -8,7 +8,13 @@ public class Task {
     private String description;
     private LocalDate dueDate;
 
-    // TODO: Implement constructor
+    // Implement constructor
+    public Task(int id, String title, String description, LocalDate dueDate) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+    }
 
     // Getters
     public int getId() {
